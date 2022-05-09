@@ -1,0 +1,76 @@
+<div class="container has-text-centered">
+  <h1 class="title is-1">New Movie Form</h1>
+</div>
+
+<div class="section is-centered">
+
+  <form
+    action="/movies/create"
+    method="POST"
+    class="column is-4 is-centered has-text-centered"
+    style="margin: auto"
+  >
+
+    <div class="field">
+      <label for="title">Title</label>
+
+      <div class="control has-icons-left has-icons-right">
+        <input type="text" name="title" />
+      </div>
+      <span class="icon is-small is-left">
+        <i></i>
+      </span>
+
+      <span class="icon is-small is-right">
+        <i></i>
+      </span>
+    </div>
+
+    <div class="field">
+      <label for="genre">Genre</label>
+
+      <div class="control has-icons-left has-icons-right">
+        <input type="text" name="genre" />
+
+      </div>
+      <span class="icon is-small is-left">
+        <i></i>
+      </span>
+
+      <span class="icon is-small is-right">
+        <i></i>
+      </span>
+    </div>
+
+    <div class="field">
+      <label for="plot">Plot</label>
+
+      <div class="control has-icons-left has-icons-right">
+        <input type="text" name="plot" />
+
+      </div>
+      <span class="icon is-small is-left">
+        <i></i>
+      </span>
+
+      <span class="icon is-small is-right">
+        <i></i>
+      </span>
+    </div>
+
+    {{!-- <select name="cast" multiple>
+    {{#each allCelebs}}
+      <option value={{_id}}>{{name}}</option>
+    {{/each}}
+  </select> --}}
+    <div>
+      <p>Select the cast:</p>
+      {{#each allCelebs}}
+        <input type="checkbox" name="cast" value={{_id}} />
+        <label for="cast"> {{name}}</label><br />
+      {{/each}}
+    </div>
+
+    <button class="button is-rounded is-dark" type="submit">Create a new movie!</button>
+  </form>
+</div>
