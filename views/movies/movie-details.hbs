@@ -1,0 +1,40 @@
+<h2>Movie details</h2>
+<a href="/">Home</a> | <a href="/movies">Movie list</a> | <a href="/movies/create">Create a new movie</a>
+
+<br /><br /><br />
+<div>
+  
+  <p>Title: {{movie.title}}</p>
+  
+  <p>Genre: {{movie.genre}}</p>
+  
+  <p>Plot: {{movie.plot}}</p>
+  
+  <p>Cast:</p>
+  <!--<ul>
+    {{#each movie.cast}}
+      <li><h5>{{name}}</h5></li>
+      <li>{{occupation}}</li>
+      <li>{{catchPhrase}}</li>
+    {{/each}}
+  </ul>-->
+
+  {{#each movie.cast}}
+    <div>
+        <h5>{{name}}</h5>
+        <h6>Occupation: {{occupation}}</h6>
+        <p>Catch phrase: {{catchPhrase}}</p>
+    </div>
+  {{/each}}
+
+<form action="/movies/{{movie._id}}/edit" method="GET">
+  <button type="submit">Edit this movie</button>
+</form>
+
+<br>
+
+<form action="/movies/{{movie._id}}/delete" method="POST">
+    <button type="submit">Delete this movie</button>
+</form>
+
+</div>
